@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# Amy's Maximizer CRM Technical Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Kanban style task list using Axios to retrieve data from provided API. Built using React.
+
+Deployed on Netlify!
+https://amy-maximizer.netlify.app/
 
 ## Available Scripts
 
