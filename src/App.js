@@ -1,5 +1,5 @@
 import "./App.css";
-import Tag from "./Components/Tag";
+import Tag from "./components/Tag";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import {
