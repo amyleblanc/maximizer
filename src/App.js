@@ -1,8 +1,8 @@
 import "./App.css";
+import Tag from "./Components/Tag";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import {
-  Avatar,
   Box,
   Card,
   CardContent,
@@ -39,15 +39,6 @@ function App() {
       }
     }
     return filtered;
-  };
-
-  const getInitials = (string) => {
-    const initials = string
-      .split(" ")
-      .map((word) => word[0])
-      .join("");
-
-    return initials.toUpperCase();
   };
 
   const todoTasks = filterTaskStatus(data, "Open");
@@ -101,54 +92,7 @@ function App() {
                     <br />
                     <Typography variant="p">{task.Summary}</Typography>
                   </CardContent>
-                  {task.Tags && (
-                    <CardContent sx={{ paddingLeft: "8px" }}>
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexDirection: "row",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        <Box
-                          sx={{
-                            display: "flex",
-                            flexDirection: "row",
-                            justifyContent: "flex-start",
-                          }}
-                        >
-                          {task.Tags.split(",").map((tag) => (
-                            <Box
-                              sx={{
-                                display: "flex",
-                                flexDirection: "column",
-                                margin: 1,
-                                marginRight: 0,
-                                backgroundColor: "#ECEEEE",
-                                border: 1,
-                                borderColor: "#ECEEEE",
-                                borderRadius: "8px",
-                                padding: "4px",
-                              }}
-                            >
-                              <Typography color="gray" variant="p">
-                                {tag}
-                              </Typography>
-                            </Box>
-                          ))}
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            flexDirection: "column",
-                            alignSelf: "center",
-                          }}
-                        >
-                          <Avatar>{getInitials(task.Assignee)}</Avatar>
-                        </Box>
-                      </Box>
-                    </CardContent>
-                  )}
+                  {task.Tags && <Tag task={task} />}
                 </Card>
               ))}
             </Box>
@@ -189,54 +133,7 @@ function App() {
                     <br />
                     <Typography variant="p">{task.Summary}</Typography>
                   </CardContent>
-                  {task.Tags && (
-                    <CardContent sx={{ paddingLeft: "8px" }}>
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexDirection: "row",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        <Box
-                          sx={{
-                            display: "flex",
-                            flexDirection: "row",
-                            justifyContent: "flex-start",
-                          }}
-                        >
-                          {task.Tags.split(",").map((tag) => (
-                            <Box
-                              sx={{
-                                display: "flex",
-                                flexDirection: "column",
-                                margin: 1,
-                                marginRight: 0,
-                                backgroundColor: "#ECEEEE",
-                                border: 1,
-                                borderColor: "#ECEEEE",
-                                borderRadius: "8px",
-                                padding: "4px",
-                              }}
-                            >
-                              <Typography color="gray" variant="p">
-                                {tag}
-                              </Typography>
-                            </Box>
-                          ))}
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            flexDirection: "column",
-                            alignSelf: "center",
-                          }}
-                        >
-                          <Avatar>{getInitials(task.Assignee)}</Avatar>
-                        </Box>
-                      </Box>
-                    </CardContent>
-                  )}
+                  {task.Tags && <Tag task={task} />}
                 </Card>
               ))}
             </Box>
@@ -277,54 +174,7 @@ function App() {
                     <br />
                     <Typography variant="p">{task.Summary}</Typography>
                   </CardContent>
-                  {task.Tags && (
-                    <CardContent sx={{ paddingLeft: "8px" }}>
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexDirection: "row",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        <Box
-                          sx={{
-                            display: "flex",
-                            flexDirection: "row",
-                            justifyContent: "flex-start",
-                          }}
-                        >
-                          {task.Tags.split(",").map((tag) => (
-                            <Box
-                              sx={{
-                                display: "flex",
-                                flexDirection: "column",
-                                margin: 1,
-                                marginRight: 0,
-                                backgroundColor: "#ECEEEE",
-                                border: 1,
-                                borderColor: "#ECEEEE",
-                                borderRadius: "8px",
-                                padding: "4px",
-                              }}
-                            >
-                              <Typography color="gray" variant="p">
-                                {tag}
-                              </Typography>
-                            </Box>
-                          ))}
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            flexDirection: "column",
-                            alignSelf: "center",
-                          }}
-                        >
-                          <Avatar>{getInitials(task.Assignee)}</Avatar>
-                        </Box>
-                      </Box>
-                    </CardContent>
-                  )}
+                  {task.Tags && <Tag task={task} />}
                 </Card>
               ))}
             </Box>
@@ -365,54 +215,7 @@ function App() {
                     <br />
                     <Typography variant="p">{task.Summary}</Typography>
                   </CardContent>
-                  {task.Tags && (
-                    <CardContent sx={{ paddingLeft: "8px" }}>
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexDirection: "row",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        <Box
-                          sx={{
-                            display: "flex",
-                            flexDirection: "row",
-                            justifyContent: "flex-start",
-                          }}
-                        >
-                          {task.Tags.split(",").map((tag) => (
-                            <Box
-                              sx={{
-                                display: "flex",
-                                flexDirection: "column",
-                                margin: 1,
-                                marginRight: 0,
-                                backgroundColor: "#ECEEEE",
-                                border: 1,
-                                borderColor: "#ECEEEE",
-                                borderRadius: "8px",
-                                padding: "4px",
-                              }}
-                            >
-                              <Typography color="gray" variant="p">
-                                {tag}
-                              </Typography>
-                            </Box>
-                          ))}
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            flexDirection: "column",
-                            alignSelf: "center",
-                          }}
-                        >
-                          <Avatar>{getInitials(task.Assignee)}</Avatar>
-                        </Box>
-                      </Box>
-                    </CardContent>
-                  )}
+                  {task.Tags && <Tag task={task} />}
                 </Card>
               ))}
             </Box>
